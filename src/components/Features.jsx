@@ -47,7 +47,7 @@ const features = [
   },
 ];
 
-export default function FeaturesSection() {
+const Features = () => {
   return (
     <section id="features" className="bg-black text-white py-16 px-4">
       <div className="max-w-6xl mx-auto text-center">
@@ -74,3 +74,7 @@ export default function FeaturesSection() {
     </section>
   );
 }
+
+
+export default Features;
+

@@ -7,9 +7,11 @@ import {
   FaLock,
   FaUser,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
   const [isLogin, setIsLogin] = useState(true);
+  const navigate = useNavigate();
 
   const toggleAuthMode = () => setIsLogin(!isLogin);
 
@@ -32,7 +34,7 @@ export default function HeroSection() {
 
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-4 mt-8">
-            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg">
+            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg" onClick={()=> navigate('/register')}>
               <FaBolt /> Get Started
             </button>
             <a
@@ -127,7 +129,7 @@ export default function HeroSection() {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-semibold cursor-pointer"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-semibold cursor-pointer" onClick={()=> navigate('/dashboard')}
             >
               {isLogin ? "Sign In" : "Sign Up"}
             </button>
